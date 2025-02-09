@@ -26,6 +26,17 @@ jobs:
         run: zef install --/test --test-depends --deps-only .
       - name: Install App::Prove6
         run: zef install --/test App::Prove6
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+            version: '5.15.2'
+            dir: '${{ github.workspace }}/extern/'
+            install-deps: 'true'
+            archives: 'qtbase'
+            cache: 'true'
+            cache-key-prefix: 'install-qt-action'
+      - name: Build object
+        run: zef install .
       - name: Run Tests
         run: prove6 -I. t
 
