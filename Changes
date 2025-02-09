@@ -1,0 +1,36 @@
+v0.0.7  2025/02/04
+    * Fix a bug rising when some Qt C++ virtual methods are used
+    * Add QDialog class
+    * Add a QDialog example
+
+v0.0.6  2024/11/28
+    * Move to zef ecosystem
+    * Add new Qt classes (QGridLayout, QMainWindow, some QGraphics classes ...)
+    * Add QGridLayout class
+    * Add some new examples
+    * Fix the deprecated use of method Str in class Distribution::Resource
+    * Fix the definition of a QtSignal in a forward declared class
+
+v0.0.5  2021/28/08
+    * Fix a bug in event handlers
+    * Add QSlider, QDial, QCheckBox and QRadioButton classes
+    * Add sliders.raku example
+    
+v0.0.4  2021/08/16
+    * Fix corrupt strings returned by methods from the Qt API
+    * Fix signal/slot to/from Qt with non default arguments
+    * Add a few methods in QTextEdit
+    * Update an old example a add a new one
+
+v0.0.3  2021/08/04
+    * Fix guessuse which was missing QApplication
+    * Add QResizeEvent and some associated methods
+    * Add QFileDialog.getOpenFileName and QFileDialog.getSaveFileName static
+      methods
+    * Update examples
+
+v0.0.2  2021/07/18
+    * First released version
+    * Implement the Qt signal/slot mechanism
+    * Implement the subclassing and overriding mechanism
+    * Implement a minimum of Qt classes and methods
