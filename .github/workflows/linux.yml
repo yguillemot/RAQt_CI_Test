@@ -6,7 +6,6 @@ on:
       - '*'
     tags-ignore:
       - '*'
-  pull_request:
 
 jobs:
   raku:
@@ -23,12 +22,12 @@ jobs:
         with:
           raku-version: ${{ matrix.raku-version }}
       - name: Install Dependencies
-        run: zef install --/test --test-depends --deps-only .
+          run: zef install --/test --test-depends --deps-only .
       - name: Install App::Prove6
-        run: zef install --/test App::Prove6
+          run: zef install --/test App::Prove6
       - name: Install Qt
-        uses: jurplel/install-qt-action@v4
-        with:
+          uses: jurplel/install-qt-action@v4
+          with:
             version: '5.15.2'
             dir: '${{ github.workspace }}/extern/'
             install-deps: 'true'
@@ -36,11 +35,11 @@ jobs:
             cache: 'true'
             cache-key-prefix: 'install-qt-action'
       - name: Build object
-        run: |
-          sudo apt-get install -y xvfb libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-xinerama0 libxcb-xinput0 libxcb-xfixes0
-          export DISPLAY=:99
-          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
-          zef install .
+          run: |
+            sudo apt-get install -y xvfb libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-xinerama0 libxcb-xinput0 libxcb-xfixes0
+            export DISPLAY=:99
+            sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
+            zef install .
       - name: Run Tests
-        run: prove6 -I. t
+          run: prove6 -I. t
 
