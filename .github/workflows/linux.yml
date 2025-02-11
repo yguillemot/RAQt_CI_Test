@@ -23,9 +23,6 @@ jobs:
         with:
           raku-version: ${{ matrix.raku-version }}
 
-      - name: Install App::Prove6
-          run: zef install --/test App::Prove6
-
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
         with:
